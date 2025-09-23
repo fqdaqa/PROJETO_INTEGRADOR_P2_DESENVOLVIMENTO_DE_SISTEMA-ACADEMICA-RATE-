@@ -99,3 +99,5 @@ Para garantir a segurança e personalização da experiência, o Rate+ possui um
         *   Um **resumo conciso** do desempenho geral do aluno.
         *   Uma identificação de **áreas potenciais de preocupação**.
         *   Um gráfico de barras (se aplicável) para visualizar as áreas de preocupação.
+
+[Link para acessar o projeto do sistema Rate +](https://9000-firebase-studio-1747677786641.cluster-uf6urqn4lned4spwk4xorq6bpo.cloudworkstations.dev/?monospaceUid=340319)
