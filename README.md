@@ -2,102 +2,122 @@
 
 Bem-vindo ao Rate+ Sistema de Gestão Acadêmica! Esta aplicação web moderna foi desenvolvida para auxiliar instituições de ensino na gestão de alunos, cursos, docentes e na obtenção de insights sobre o desempenho estudantil através de inteligência artificial.
 
-## Funcionalidades Principais
+## Tecnologias Utilizadas
 
-O sistema oferece diversas funcionalidades para otimizar a gestão acadêmica:
+O Rate+ é construído com um conjunto de tecnologias robustas e eficientes, incluindo:
 
-### 0. Autenticação
+*   **Next.js:** Framework React para renderização no servidor e geração de sites estáticos (utilizando o App Router).
+*   **React:** Biblioteca JavaScript para construção de interfaces de usuário componentizadas.
+*   **ShadCN UI:** Coleção de componentes de UI elegantes e reutilizáveis.
+*   **Tailwind CSS:** Framework CSS utility-first para estilização rápida.
+*   **Genkit (com Google AI):** Para funcionalidades de Inteligência Artificial, como análise de desempenho.
+*   **TypeScript:** Superset do JavaScript que adiciona tipagem estática.
+*   **Lucide React:** Biblioteca de ícones SVG.
+*   **Zod & React Hook Form:** Para gerenciamento e validação de formulários.
 
-Para garantir a segurança e personalização da experiência, o Rate+ possui um sistema de autenticação.
+## Como Usar o Sistema: Um Guia Rápido
 
-#### Tela de Login
-*   **Como Acessar:** Ao iniciar a aplicação, você será direcionado para a tela de login (`/login`).
-*   **Como Usar:** Insira seu email e senha nos campos indicados e clique no botão "Entrar".
-*   A tela é centralizada e responsiva, adaptando-se a diferentes tamanhos de dispositivos. O fundo é preto, com o logo e nome do sistema em destaque.
+### 1. Autenticação: A Porta de Entrada
 
-#### Cadastro de Novo Usuário (Primeiro Acesso)
-*   **Como Acessar:** Na tela de login, clique no botão "Primeiro acesso? Cadastre-se".
-*   **Como Usar:** Você será direcionado para a tela de cadastro (`/signup`). Preencha o formulário com seu Nome Completo, Email, Senha e Confirmação de Senha. Após preencher, clique em "Cadastrar". (Atualmente, esta funcionalidade é simulada e não persiste dados).
-*   Para retornar à tela de login, clique em "Voltar para Login" no rodapé.
+Para garantir a segurança dos dados, o primeiro passo é sempre a autenticação.
 
-#### Recuperação de Senha
-*   **Como Acessar:** Na tela de login, clique no botão "Esqueceu sua senha?".
-*   **Como Usar:** Na tela de recuperação (`/forgot-password`), insira o email associado à sua conta e clique em "Enviar Link por Email". Uma mensagem simulada indicará o envio de instruções. A opção de recuperação por SMS está planejada para o futuro.
-*   Para retornar à tela de login, clique em "Voltar para Login" no rodapé.
+*   **Login:** Ao acessar o sistema, você verá a tela de login. Insira seu email e senha cadastrados para entrar.
+*   **Primeiro Acesso?** Se for seu primeiro acesso, clique em "Primeiro acesso? Cadastre-se". Você preencherá um formulário simples (nome, email, senha) e, após o cadastro, será redirecionado para a tela de login.
+*   **Esqueceu a Senha?** Se não se lembra da sua senha, clique em "Esqueceu sua senha?". Informe seu email para receber as instruções de recuperação (funcionalidade simulada).
+*   **Sair (Logout):** Dentro do sistema, clique no ícone de perfil no canto superior direito e selecione "Sair" para encerrar sua sessão com segurança.
 
-#### Logout
-*   **Como Acessar:** Após fazer login, clique no ícone de perfil de usuário (localizado no canto superior direito do cabeçalho da aplicação).
-*   **Como Usar:** No menu suspenso, selecione a opção "Sair". Você será redirecionado para a tela de login.
+### 2. Painel Principal (Dashboard)
 
-### 1. Painel Principal (Dashboard)
+Após o login, você chegará ao Painel. Ele é o seu ponto de partida e oferece atalhos para as áreas mais importantes:
 
-*   **Como Acessar:** Automaticamente após um login bem-sucedido, ou clicando no item "Painel" (ícone `LayoutDashboard`) no menu lateral esquerdo.
-*   **O que faz:** O painel é sua central de comando. Ele exibe cards que oferecem acesso rápido às principais seções do sistema:
-    *   "Gerenciar Usuários"
-    *   "Catálogo de Cursos" (funcionalidade futura)
-    *   "Desempenho dos Alunos"
-    *   Um resumo de atividades recentes (placeholder atual).
+*   **Gerenciar Usuários:** Para visualizar e administrar todas as contas.
+*   **Catálogo de Cursos:** Para gerenciar os cursos oferecidos.
+*   **Desempenho dos Alunos:** Para usar a ferramenta de análise com Inteligência Artificial.
 
-### 2. Gerenciamento de Usuários
+### 3. Gerenciamento de Usuários
 
-*   **Como Acessar:**
-    *   A partir do Painel, clique no card "Gerenciar Usuários".
-    *   Alternativamente, clique no item "Usuários" (ícone `Users`) no menu lateral esquerdo.
-*   **Funcionalidades:**
-    *   **Visualizar Usuários:** Uma tabela exibe todos os usuários cadastrados (alunos, professores, administradores) com detalhes como nome, email, papel (com badge colorida) e data de registro.
-    *   **Pesquisar e Ordenar:** Utilize o campo de busca acima da tabela para filtrar usuários por nome, email ou papel. Clique nos cabeçalhos das colunas (Nome, Email, Papel, Registrado em) para ordenar os dados.
-    *   **Adicionar Novo Usuário:**
-        *   **Como Acessar:** Clique no botão "Adicionar Usuário" (com ícone `PlusCircle`) localizado no canto superior direito da tela de listagem de usuários.
-        *   **Como Usar:** Você será levado a um formulário (`/users/add`) para preencher os detalhes do novo usuário (atualmente um placeholder).
-    *   **Editar Usuário:**
-        *   **Como Acessar:** Na tabela de usuários, clique no ícone de três pontos (`MoreHorizontal`) na coluna "Ações" correspondente ao usuário desejado. No menu suspenso, selecione "Editar".
-        *   **Como Usar:** (Funcionalidade placeholder no momento) Idealmente, levaria a um formulário pré-preenchido para edição.
-    *   **Excluir Usuário:**
-        *   **Como Acessar:** Na tabela de usuários, clique no ícone de três pontos (`MoreHorizontal`) na coluna "Ações". No menu suspenso, selecione "Excluir".
-        *   **Como Usar:** Uma caixa de diálogo de confirmação aparecerá. Confirme para remover o usuário (a remoção é simulada e opera no estado do cliente).
+Esta seção é o coração administrativo do sistema, permitindo o controle total sobre quem tem acesso.
 
-### 3. Matrícula de Novos Alunos
+*   **Como Acessar:** Pelo atalho no Painel ou clicando em "Usuários" no menu lateral.
+*   **O que você pode fazer:**
+    *   **Visualizar:** Veja uma tabela com todos os usuários (alunos, professores e administradores), incluindo nome, email e perfil.
+    *   **Pesquisar e Ordenar:** Use a barra de busca para encontrar alguém rapidamente ou clique nos títulos das colunas para ordenar a lista.
+    *   **Adicionar Usuário:** Clique no botão "Adicionar Usuário". Um formulário completo aparecerá para você cadastrar todos os dados de uma pessoa, desde informações gerais (CPF, endereço) até dados específicos do seu perfil (matrícula de aluno, cargo de administrador, etc.).
+    *   **Editar:** Clique nos três pontinhos ao lado de um usuário e escolha "Editar" para atualizar qualquer informação do seu cadastro.
+    *   **Excluir:** No mesmo menu, a opção "Excluir" remove o usuário do sistema.
 
-*   **Como Acessar:** No menu lateral esquerdo, clique no item "Matrículas" (ícone `UserPlus`). Isso o levará para a página `/enrollment`.
-*   **Como Usar:** Preencha o formulário detalhado com as informações do novo aluno, incluindo:
-    *   Nome completo do aluno
-    *   Email do aluno
-    *   Data de nascimento
-    *   Endereço completo
-    *   Nome e telefone do contato de emergência
-    *   Seleção do programa/curso de interesse
-    *   Após preencher, clique em "Matricular Aluno". (Envio simulado).
+### 4. Catálogo de Cursos
 
-### 4. Inscrição em Cursos
+Aqui você pode organizar todos os cursos que a instituição oferece.
 
-*   **Como Acessar:** No menu lateral esquerdo, clique no item "Inscrição em Cursos" (ícone `ClipboardList`). Isso o levará para a página `/courses/register`.
-*   **Como Usar:** Este formulário permite inscrever um aluno em um ou mais cursos para um semestre específico.
-    *   Selecione o aluno desejado na lista.
-    *   Escolha o semestre.
-    *   Marque os cursos disponíveis (com nome, código e créditos) nos quais o aluno será inscrito.
-    *   Clique em "Inscrever em Cursos". (Envio simulado).
+*   **Como Acessar:** Pelo atalho no Painel ou clicando em "Catálogo de Cursos" no menu lateral.
+*   **O que você pode fazer:**
+    *   **Visualizar:** Uma tabela mostra todos os cursos com seu código, nome e quantidade de créditos.
+    *   **Adicionar Curso:** Clique no botão "Adicionar Curso" para abrir um formulário e cadastrar um novo curso.
+    *   **Editar e Excluir:** Use o menu de ações em cada linha para modificar os detalhes de um curso ou removê-lo do catálogo.
 
-### 5. Gerenciamento de Perfis de Docentes
+### 5. Matrícula de Novos Alunos
 
-*   **Como Acessar:** No menu lateral esquerdo, clique no item "Perfis de Docentes" (ícone `Briefcase`). Isso o levará para a página `/faculty/profile`.
-*   **Como Usar:** Esta seção é para criar ou atualizar os perfis dos membros do corpo docente.
-    *   Selecione um membro do corpo docente existente na lista.
-    *   Informe o departamento e o título (ex: Professor, Professor Associado).
-    *   Opcionalmente, adicione a localização do gabinete, horário de atendimento e uma breve biografia.
-    *   Clique em "Salvar Perfil". (Envio simulado).
+Esta tela foi desenhada para agilizar o processo de registro de um novo aluno na instituição.
 
-### 6. Análise de Desempenho com IA
+*   **Como Acessar:** Clique em "Matrículas" no menu lateral.
+*   **Como Usar:** Preencha o formulário com os dados do novo aluno (nome, email, endereço, contato de emergência, etc.) e selecione o curso de interesse. Ao clicar em "Matricular Aluno", o sistema automaticamente:
+    1.  Cria um perfil de usuário para o aluno.
+    2.  Registra a matrícula dele no curso selecionado.
 
-*   **Como Acessar:**
-    *   A partir do Painel, clique no card "Desempenho dos Alunos".
-    *   Alternativamente, clique no item "Análise de Desempenho" (ícone `BrainCircuit`) no menu lateral esquerdo. Isso o levará para a página `/performance-insights`.
-*   **Como Usar:** Esta ferramenta utiliza Inteligência Artificial (Genkit) para analisar o desempenho de um aluno.
-    *   No formulário, informe o nome completo do aluno.
-    *   No campo "Registros de Cursos e Observações", forneça um resumo do desempenho acadêmico (notas, comportamento, participação, dificuldades, etc.).
-    *   Clique em "Gerar Análise".
-    *   O sistema processará os dados e exibirá:
-        *   Um **resumo conciso** do desempenho geral do aluno.
-        *   Uma identificação de **áreas potenciais de preocupação**.
-        *   Um gráfico de barras (se aplicável) para visualizar as áreas de preocupação.
+### 6. Consulta de Matrículas
+
+Precisa saber em quais matérias um aluno está matriculado? Esta é a tela certa.
+
+*   **Como Acessar:** Clique em "Consulta de Matrículas" no menu lateral.
+*   **Como Usar:**
+    1.  Selecione o nome de um aluno na lista.
+    2.  O sistema mostrará instantaneamente uma tabela com todos os cursos em que aquele aluno está matriculado.
+
+### 7. Perfis de Docentes e Discentes
+
+Esta é uma central de consulta para visualizar a "ficha cadastral" completa de qualquer pessoa no sistema.
+
+*   **Como Acessar:** Clique em "Perfis de Docentes e Discentes" no menu lateral.
+*   **Como Usar:** Selecione qualquer usuário na lista (seja aluno, professor ou administrador). Imediatamente, todos os dados cadastrados para essa pessoa serão exibidos na tela, de forma organizada.
+
+### 8. Análise de Desempenho com IA
+
+Esta é a ferramenta mais inovadora do Rate+. Ela usa Inteligência Artificial para ajudar a entender e apoiar o desenvolvimento dos alunos.
+
+*   **Como Acessar:** Pelo atalho no Painel ou clicando em "Análise de Desempenho" no menu lateral.
+*   **Como Usar:**
+    1.  Informe o nome do aluno que você deseja analisar.
+    2.  No campo de texto, descreva o desempenho dele (notas, comportamento, participação, dificuldades, etc.).
+    3.  Clique em "Gerar Análise".
+*   **O que a IA faz:** Com base nas informações que você forneceu, a IA, atuando como um especialista em pedagogia, irá gerar um relatório completo contendo:
+    *   Um **resumo profissional** do desempenho do aluno.
+    *   A identificação de **áreas de preocupação**, explicando as possíveis causas pedagógicas.
+    *   Uma **sugestão de intervenção pedagógica** clara e prática para ajudar o aluno a superar suas dificuldades.
+
+## Como Executar o Projeto (Desenvolvimento)
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone <url-do-repositorio>
+    cd rate-plus-sistema-gestao-academica
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure as variáveis de ambiente:**
+    Crie um arquivo `.env` na raiz do projeto e adicione sua chave de API para o Google AI (Genkit).
+    ```env
+    GOOGLE_API_KEY=SUA_CHAVE_API_DO_GOOGLE_AQUI
+    ```
+
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+    A aplicação estará disponível em `http://localhost:9002`.
 
 [Link para acessar o projeto do sistema Rate +](https://9000-firebase-studio-1747677786641.cluster-uf6urqn4lned4spwk4xorq6bpo.cloudworkstations.dev/?monospaceUid=340319)
